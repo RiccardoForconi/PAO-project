@@ -2,6 +2,9 @@ package it.univpm.progettoSpringBootApp.service;
 
 import org.json.simple.*;
 
+/**
+* interfaccia relativa ai servizi forniti dall'applicazione
+*/
 public interface Servizio{
 	public abstract JSONArray getMetadata();
 	public abstract JSONArray getFarmacie();
