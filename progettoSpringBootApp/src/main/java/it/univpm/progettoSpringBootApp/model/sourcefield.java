@@ -1,16 +1,8 @@
 package it.univpm.progettoSpringBootApp.model;
 
-
 public class sourcefield {
-	/**
-     * vettore di stringhe contenente i nominativi delle variabili
-     * all'interno del dataset
-     */
 	public String[] sourceFields = new String[17];
 	
-	/**
-     * Costruttore che costruisce un oggetto sourcefield standard
-     */
 	public sourcefield() {
 		this.sourceFields[0]="CODICE TIPOLOGIA";
 		this.sourceFields[1]="INDIRIZZO";

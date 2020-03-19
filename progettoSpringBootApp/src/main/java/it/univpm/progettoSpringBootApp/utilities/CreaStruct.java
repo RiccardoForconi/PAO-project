@@ -11,32 +11,22 @@ import org.json.simple.parser.ParseException;
 
 import it.univpm.progettoSpringBootApp.model.Farmacia;
 
-/**
-* Implementazione della classe CreaStruct che ci permette di creare
-* e ritornare un ArrayList di farmacie, cioè tutte le farmacie contenute
-* nel dataset fornito.
-*/
+
 public class CreaStruct {
 private ArrayList<Farmacia> dati = new ArrayList<Farmacia>();
 	
-	/**
-	* Costruttore di default
-	*/
+	//Costruttore
 	public CreaStruct() {
 		
 	}
 	
-	/**
-	* metodo che restituisce l'array di farmacie
-	*/
+	//metodo getter
 	public ArrayList<Farmacia> getDati(){
 		return dati;
 	}
 	
-	/**
-	* metodo che legge il contenuto del file json memorizzato 
-	* e inserisce il suo contenuto in un array di tipo farmacie
-	*/
+	
+	//Legge il contenuto del file json memorizzato e inserisce il suo contenuto in un array di tipo farmacie
 	public void read() throws ClassNotFoundException,IOException, ParseException{ 
 		JSONParser parser= new JSONParser();
 		JSONArray a = (JSONArray) parser.parse(new FileReader("dati.json"));
