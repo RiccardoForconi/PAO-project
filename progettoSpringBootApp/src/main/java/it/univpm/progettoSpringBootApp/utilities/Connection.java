@@ -3,24 +3,40 @@ package it.univpm.progettoSpringBootApp.utilities;
 import java.io.*;
 import java.net.*;
 
+/**
+* Implementazione della classe Connection che ci permette una 
+* connessione all'URL relativo al dataset
+*/
 public class Connection {
-	//Indirizzo URL del data set da scaricare
+		/**
+		* parametro contenente l'indirizzo del dataset da scaricare
+		*/		
 		private final String url = "https://www.dati.gov.it/api/3/action/package_show?id=024e7240-aa66-4c49-9c78-d8ad85836180";
-		
+		/**
+		* parametro contenente tutto ciò che si trova all'interno del
+		* dataset
+		*/
 		private String data;
 		
-		//Costruttore
+		/**
+		* Costruttore di default
+		*/
 		public Connection() {
 			data="";
 		}
 		
+		/**
+		* metodo che passa il contenuto del dataset.
+		*/
 		public String getData() {
 			
 			return data; 
 		}
 		
-		//Il metodo startConnection istaura una connessione e va a memorizzare il contenuto del dataset
-		//nella stringa data
+		/**
+		* Il metodo startConnection istaura una connessione e va a memorizzare il contenuto del dataset
+		* nella stringa data
+		*/
 		public void startConnection() {
 			
 			try {
