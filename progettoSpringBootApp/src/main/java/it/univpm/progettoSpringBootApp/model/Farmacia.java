@@ -2,33 +2,98 @@ package it.univpm.progettoSpringBootApp.model;
 
 public class Farmacia {
 	//Attributi della classe
-	
+		
+		/**
+		 * parametro che rappresenta il codice identificativo
+		 * della farmacia
+		 */
 		private String codId;
+		/**
+		 * parametro che rappresenta il codice assegnato dalla ASL
+		 * alla farmacia
+		 */
 		private String codASL;
+		/**
+		 * parametro che l'indirizzo della farmacia
+		 */
 		private String indirizzo;
+		/**
+		 * parametro che rappresenta il nome della farmacia
+		 */
 		private String descrizione;
+		/**
+		 * parametro che rappresenta la partita IVA della 
+		 * farmacia
+		 */
 		private String partitaIVA;
+		/**
+		 * parametro che rappresenta il cap della città dove
+		 * si trova la farmacia
+		 */
 		private String cap;
+		/**
+		 * parametro che rappresenta il codice del comune secondo
+		 * l'ISTAT
+		 */
 		private String codcomuneIstat;
+		/**
+		 * parametro che rappresenta il comune della farmacia
+		 */
 		private String descrizioneCom;
+		/**
+		 * parametro che rappresenta l'eventuale frazione della 
+		 * farmacia
+		 */
 		private String frazione;
+		/**
+		 * parametro che rappresenta il codice della provincia
+		 * secondo l'ISTAT
+		 */
 		private String codprovIstat;
+		/**
+		 * parametro che rappresenta la sigla della provincia
+		 * dove si trova la farmacia
+		 */
 		private String siglaProvincia;
+		/**
+		 * parametro che rappresenta la provincia della farmacia
+		 */
 		private String descrizioneProv;
+		/**
+		 * parametro che rappresenta la data di fine validità 
+		 * della farmacia
+		 */
 		private String datafineval;
+		/**
+		 * parametro che rappresenta la tipologia della farmacia
+		 */
 		private String descrizioneTipologia;
+		/**
+		 * parametro che rappresenta il codice relativo
+		 * alla tipologia della farmacia
+		 */
 		private String codiceTipologia;
+		/**
+		 * parametro che rappresenta la latitudine della farmacia
+		 */
 		private String latitudine;
+		/**
+		 * parametro che rappresentala longitudine della farmacia
+		 */
 		private String longitudine;
 		
-		//Costruttore di default
-		public Farmacia() {
+		/**
+		 * Costruttore di default
+		 */
+		 public Farmacia() {
 		}
 			
 		
-		//Costruttore
-		
-		public Farmacia(String codId, String codASL, String indirizzo, String descrizione, String partitaIVA, String cap,
+		/**
+		 * Costruttore che va costruire una farmacia passandogli 
+		 * i parametri relativi ai propri campi
+		 */
+		 public Farmacia(String codId, String codASL, String indirizzo, String descrizione, String partitaIVA, String cap,
 				String codcomuneIstat, String descrizioneCom, String frazione, String codprovIstat, String siglaProvincia,
 				String descrizioneProv, String datafineval, String descrizioneTipologia, String codiceTipologia,
 				String latitudine, String longitudine) {
@@ -54,8 +119,11 @@ public class Farmacia {
 
 	    
 
-		//Override di ToString
-		
+		/**
+		 * Metodo toString che ritorna una stringa relativa alle 
+		 * info della farmacia in esame
+		 * @return stringa con informazioni
+		 */
 		 public String toString() {
 			return   "Codice identificativo farmacia" + codId +"\n"  
 					+"\nCodice ASL=" + codASL + "\nIndirizzo=" + indirizzo + "\nDescrizione Farmacia="
@@ -66,8 +134,9 @@ public class Farmacia {
 					+ codiceTipologia + "\nLatitudine=" + latitudine + "\nLongitudine=" + longitudine; 
 		 }   
 
-		//Metodi setter and getter
-		
+		/**
+		 * metodi set e get della farmacia
+		 */
 		public String getCodId() {
 			return codId;
 		}
