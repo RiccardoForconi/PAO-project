@@ -8,13 +8,23 @@ import java.nio.file.Paths;
 import org.json.simple.*;
 import org.json.simple.parser.ParseException;
 
-
+/**
+* classe Parsing che ci permette di creare il file relativo ai dati
+* delle farmacie in locale. Questa classe permette anche 
+* l'estrapolazione dei dati relativi alle farmacie partendo 
+* dalla stringa contenente tutto ciò che si trovata nel dataset fornito
+* alla consegna
+*/
 public class Parsing {
 private JSONArray objA;
 	
-	//Costruttore, fa il controllo del contenuto della stringa data per vedere se il suo contenuto sono oggetti
-	//di tipo JSON e poi ne estrapola il contenuto con il metodo .get fino ad arrivare alla sezione resources 
-	//in cui si trova l'url per il download del file json. Aprire il dataset con firefox per migliore comprensione
+	/**
+	* Costruttore, fa il controllo del contenuto della stringa data per 
+	* vedere se il suo contenuto sono oggetti di tipo JSON e poi ne 
+	* estrapola il contenuto con il metodo get fino ad arrivare alla 
+	* sezione resources in cui si trova l'url per il download del file 
+	* json. Aprire il dataset con firefox per migliore comprensione.
+	*/
 	public Parsing(String data) throws ParseException{
 		//controlla se la stringa è in formato JSON
 		JSONObject obj = (JSONObject) JSONValue.parseWithException(data);
@@ -25,9 +35,10 @@ private JSONArray objA;
 	                                               // un array di json 
 	}
 	
-	
-	//Si effettua un controllo di ogni elemento dell'array fino a quando non si trova quello con il formato json
-	//e si estrapola l'url;
+	/**
+	* Si effettua un controllo di ogni elemento dell'array fino a quando
+	* non si trova quello con il formato json e si estrapola l'url
+	*/
 	public void createJSON() throws Exception{
 		boolean app=false; //necessaria in quanto ci sono due elementi di tipo json ma ce ne serve solo uno
 		for(Object o : objA){
@@ -42,8 +53,10 @@ private JSONArray objA;
 		    }
 		}
 	}
-		
-		//Va a prendere il contenuto dell'oggetto json e lo memorizza in un file a livello locale
+		/**
+		* Va a prendere il contenuto dell'oggetto json e lo memorizza 
+		* in un file a livello locale
+		*/
 		public static void download(String url, String fileName) throws Exception {
 			    
 		        try(InputStream in = URI.create(url).toURL().openStream()){
