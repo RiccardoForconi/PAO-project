@@ -13,12 +13,19 @@ import com.google.gson.Gson;
 import it.univpm.progettoSpringBootApp.utilities.*;
 import it.univpm.progettoSpringBootApp.model.*;
 
-
+/**
+* Implementazione della classe Servizio
+*/
 @Service
 public class ServiceImpl implements Servizio{
 	//numero di farmacie nel file = 1736
 	private static ArrayList<Farmacia> datas =new ArrayList<Farmacia>(1736);
-    //creare datas
+    
+    /**
+	* costruttore della classe ServiceImpl che crea la connessione
+	* all'URL e salva tutti i dati relativi alle farmacie all'interno 
+	* dell'ArrayList di Farmacie
+	*/
 	public ServiceImpl() {
 		try {
 		     Connection connect = new Connection();
@@ -33,6 +40,11 @@ public class ServiceImpl implements Servizio{
 		}
 	}
 
+	/**
+	* Questo metodo permette di far stampare un array delle farmacie 
+	* presenti in datas
+	* @return  JSONArray contenente tutte le farmacie in formato JSON
+	*/
 	public JSONArray getFarmacie(){
 		//classe per trasformazione string -> JSONObject
 		Gson g = new Gson();
@@ -53,6 +65,14 @@ public class ServiceImpl implements Servizio{
 		
 	}
 	
+	/**
+	* questo metodo permette di stampare delle statistiche relative alle
+	* farmacie che sono state filtrate attraverso un filtro conditional 
+	* inserito nel body
+	* @param JSONObject contenente il filtro che ci aiuta a ritrovare le
+	* farmacie richieste
+	* @return  JSONObject contenente le statistiche in formato JSON
+	*/
 	public JSONObject getStats(JSONObject filter)  {
 		//campo contiene il filtro su cui facciamo la statistica
 		ArrayList<String> campo;
@@ -97,6 +117,13 @@ public class ServiceImpl implements Servizio{
 		return json;
 	}
 	
+	/**
+	* questo metodo permette di eliminare le farmacie a seconda di
+	* un parametro passato dall'utente 
+	* @param JSONObject contenente il filtro che ci aiuta a ritrovare le
+	* farmacie richieste
+	* @return  void
+	*/
 	public void deleteFarmaciaSimple(String codiceFarmacia)  {
 	    Gson g = new Gson();
 	    JSONArray totale = this.getFarmacie();
@@ -115,6 +142,13 @@ public class ServiceImpl implements Servizio{
 	    }
 	  }
 	
+	/**
+	* questo metodo permette di eliminare le farmacie a seconda di un 
+	* filtro conditional inserito dall'utente.
+	* @param JSONObject contenente il filtro che ci aiuta a ritrovare le
+	* farmacie richieste
+	* @return  void
+	*/
 	public void deleteFarmaciaConditional(JSONObject filter) {
 		JSONArray trovato = this.getFarmacieConditional(filter);
 		Gson g = new Gson();
@@ -129,6 +163,13 @@ public class ServiceImpl implements Servizio{
 		}
 	}
 	
+	/**
+	* questo metodo permette di eliminare le farmacie a seconda di un 
+	* filtro logical inserito dall'utente.
+	* @param JSONObject contenente il filtro che ci aiuta a ritrovare le
+	* farmacie richieste
+	* @return  void
+	*/
 	public void deleteFarmaciaLogical(JSONObject filter) {
 		JSONArray trovato = this.getFarmacieLogical(filter);
 		Gson g = new Gson();
@@ -143,6 +184,13 @@ public class ServiceImpl implements Servizio{
 		}
 	}
 	
+	/**
+	* questo metodo stampa le informazioni relative alla classe Farmacia
+	* in particolare stampa i metadati, cioè il nome dei campi nel
+	* dataset, il nome dei campi nella classe e il tipo relativo all'
+	* attributo considerato.
+	* @return  JSONArray contenente tutti i metadati in formato JSON
+	*/
 	public JSONArray getMetadata(){
 		Gson g = new Gson();
 		String str = new String();
@@ -165,6 +213,14 @@ public class ServiceImpl implements Servizio{
 	    return array;
 	}
 	
+	/**
+	* questo metodo permette di stampare delle statistiche relative
+	* a un campo delle farmacie scelto attraverso il passaggio di un 
+	* parametro
+	* @param stringa contenente il nome del campo sulla quale si 
+	* vogliono le statistiche
+	* @return  JSONObject contenente le statistiche in formato JSON
+	*/
 	public JSONObject getStats(String campo)  {
 		System.out.println("Campo richiesto" + campo);
 		Gson g = new Gson();
@@ -209,6 +265,13 @@ public class ServiceImpl implements Servizio{
 		return json;
 	}
 	
+	/**
+	* questo metodo permette di stampare le farmacie che sono state
+	* filtrate attraverso un filtro conditional
+	* @param JSONObject contenente il filtro sulla quale si scelgono
+	* le farmacie
+	* @return  JSONArray contenente le farmacie filtrate
+	*/
 	public JSONArray getFarmacieConditional(JSONObject filter) {
 		Gson g = new Gson();
 		String str = new String();
@@ -251,6 +314,13 @@ public class ServiceImpl implements Servizio{
 		return arr;	
 	}
 	
+	/**
+	* questo metodo permette di stampare le farmacie che sono state
+	* filtrate attraverso un filtro logical
+	* @param JSONObject contenente il filtro sulla quale si scelgono
+	* le farmacie
+	* @return  JSONArray contenente le farmacie filtrate
+	*/
 	public JSONArray getFarmacieLogical(JSONObject filter) {
 		Gson g = new Gson();
 		String str = new String();
@@ -301,7 +371,14 @@ public class ServiceImpl implements Servizio{
 		}
 		return arr;	
 	}	
-
+	
+	/**
+	* questo metodo permette trasformare le stringhe in JSONObject,
+	* questa operazione è stata fatta molte volte all'interno del 
+	* programma
+	* @param stringa da trasformare
+	* @return JSONObject trasformato
+	*/
 	public JSONObject stringToJSONObject (String str) {
 		JSONParser parser = new JSONParser();
 		JSONObject obj = new JSONObject();
@@ -315,6 +392,13 @@ public class ServiceImpl implements Servizio{
 		return obj;
 	}   
 	
+	/**
+	* questo metodo permette di prendere le chiavi relative a un 
+	* JSONObject. È stato inserito questo metodo soprattutto per 
+	* chiarificare la lettura del programma
+	* @param JSONObject dalla quale prendere le chiavi
+	* @return ArrayList<String> contenente le chiavi.
+	*/
 	public ArrayList<String> prendiChiavi(JSONObject obj)
 	{
 		ArrayList<String> listaChiavi;
