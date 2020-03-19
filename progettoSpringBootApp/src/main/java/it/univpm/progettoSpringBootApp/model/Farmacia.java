@@ -52,20 +52,19 @@ public class Farmacia {
 			this.longitudine = longitudine;
 		}
 
-
 	    
 
 		//Override di ToString
 		
-		public String toString() {
-			return "Codice identificativo=" + codId + "\nCodice ASL=" + codASL + "\nIndirizzo=" + indirizzo + "\nDescrizione Farmacia="
+		 public String toString() {
+			return   "Codice identificativo farmacia" + codId +"\n"  
+					+"\nCodice ASL=" + codASL + "\nIndirizzo=" + indirizzo + "\nDescrizione Farmacia="
 					+ descrizione + "\nPartita IVA=" + partitaIVA + "\nCAP=" + cap + "\nCodice comune Istat=" + codcomuneIstat
 					+ "\nDescrizione comune=" + descrizioneCom + "\nFrazione=" + frazione + "\nCodice provincia Istat=" + codprovIstat
 					+ "\nSigla Provincia=" + siglaProvincia + "\nDescrizione Provincia=" + descrizioneProv + "\nData fine validita'="
 					+ datafineval + "\nDescrizione Tipologia=" + descrizioneTipologia + "\nCodice Tipologia="
-					+ codiceTipologia + "\nLatitudine=" + latitudine + "\nLongitudine=" + longitudine;
-		}
-
+					+ codiceTipologia + "\nLatitudine=" + latitudine + "\nLongitudine=" + longitudine; 
+		 }   
 
 		//Metodi setter and getter
 		
