@@ -18,10 +18,10 @@ utilizzando SpringBoot e Postman.
 
 
 # Compagnoni-Forconi/project.SpringBootApplication/src/main/java/com/univpm/project/.
-all'interno di questo percorso troviamo tutte i file relativi al progetto sviluppato.
+All'interno di questo percorso troviamo tutte i file relativi al progetto sviluppato.
 
 ### "SpringBootApplication" folder
-all'interno di questa cartella troviamo il main attraverso il quale possiamo eseguire il programma. 
+All'interno di questa cartella troviamo il main attraverso il quale possiamo eseguire il programma. 
 L'eseguibile si chiama Application.java e alla cartella viene dato questo nome dato che utilizziamo i servizi SpringBoot 
 per utilizzare la nostra applicazione simulando il suo inserimento in un web server.
 
@@ -34,7 +34,7 @@ Nella cartella "controller" sono contenute tutte quelle rotte che l'utente deve 
 Nella cartella sono contenuti "service.java" e "serviceImpl.java". La classe service è un'interfaccia in cui sono dichiarate tutte quelle funzioni richiamate in "controller.java". In "serviceImp.java" invece sono contenute le implementazioni effetive delle funzioni citate in precendenza. 
 
 ### "utilities" folder
-attraverso questa cartella andiamo a scaricare il testo presente all'interno del data-set fornito alla consegna.
+Attraverso i metodi deviniti nelle classi presenti in questa cartella andiamo a scaricare il testo presente all'interno del data-set fornito alla consegna.
 All'interno della cartella sono presenti 3 file:
 - Connection: effettua il collegamento URL per riprendere, come detto precedentemente, il testo descritto all'interno del
 data-set fornito alla consegna
@@ -45,7 +45,7 @@ andare ad analizzare i commenti relativi ai metodi presenti nel file.
 "Farmacia" permettondoci quindi di avere la struttura su cui poi possiamo lavorare.
 
 # Il Dataset
-Il dataset utilizzato in questo programma è una raccolta di dati riguaradanti l'insieme delle farmacie attive nella regione Campania nell'intervallo temporale che si estende dal 3/06/2019 al 1/08/2019.
+Il dataset utilizzato in questo programma è una raccolta di dati riguardanti l'insieme delle farmacie attive nella regione Campania nell'intervallo temporale che si estende dal 3/06/2019 al 1/08/2019.
 
 # Path Disponibili 
 In questa sezione sono illustrate tutti i comandi API utilizzati e le giuste rotte per richiedere le funzionalità del sistema implementate.
